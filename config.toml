@@ -1,7 +1,7 @@
 baseURL = "https://th3redtea.github.io/"
 languageCode = "en-us"
 defaultContentLanguage = "en"
-title = "Hugo Hermit"
+title = "TheRedTea"
 theme = "hermit"
 # enableGitInfo = true
 pygmentsCodefences  = true
@@ -14,7 +14,7 @@ enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/func
 # disqusShortname = "yourdiscussshortname"
 
 [author]
-  name = "John Doe"
+  name = "Amine Amhoume"
 
 [blackfriday]
   # hrefTargetBlank = true
@@ -34,9 +34,9 @@ enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/func
   # Metadata mostly used in document's head
   # description = ""
   # images = [""]
-  themeColor = "#494f5c"
+  themeColor = "#16213E"
 
-  homeSubtitle = "A minimal and fast theme for Hugo."
+  homeSubtitle = "Penetration tester 🖥️ and security researcher from Morocco 🇲🇦 "
   footerCopyright = ' &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
   # bgImg = ""  # Homepage background-image URL
 
@@ -46,7 +46,7 @@ enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/func
   # Toggling this option needs to rebuild SCSS, requires Hugo extended version
   justifyContent = false  # Set "text-align: justify" to `.content`.
 
-  relatedPosts = false  # Add a related content section to all single posts page
+  relatedPosts = true  # Add a related content section to all single posts page
 
   code_copy_button = true # Turn on/off the code-copy-button for code-fields
   
@@ -57,15 +57,15 @@ enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/func
   # Check https://github.com/Track3/hermit#social-icons for more info.
   [[params.social]]
     name = "twitter"
-    url = "https://twitter.com/"
+    url = "https://twitter.com/AmiineQu"
 
   [[params.social]]
-    name = "instagram"
-    url = "https://instagram.com/"
+    name = "linkedin"
+    url = "https://www.linkedin.com/in/amine-amhoume-023517109/"
 
   [[params.social]]
     name = "github"
-    url = "https://github.com/"
+    url = "https://github.com/Th3redTea"
 
 [menu]
 
@@ -76,5 +76,5 @@ enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/func
 
   [[menu.main]]
     name = "About"
-    url = "about-hugo/"
+    url = "about"
     weight = 20
