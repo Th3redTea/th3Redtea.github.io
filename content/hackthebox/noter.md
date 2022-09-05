@@ -28,7 +28,7 @@ Nmap done: 1 IP address (1 host up) scanned in 13.55 seconds
 
 Checking port 5000 first. It's a web page. It's probabaly django or flask app based on 'Werkzug'. Okay! It's flask.
 
-![hackthebox noter](/assets/img/Screenshot_2022-08-24_14-50-07.png)
+![hackthebox noter](https://th3redtea.github.io/assets/img/Screenshot_2022-08-24_14-50-07.png)
 
 
 I tried SSTI (Server-side template injection) because there was input fields and SQL injection because I tought I could fetch other notes. Checking Hacktricks I found: [flask-unsign](https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/flask#flask-unsign)
@@ -102,7 +102,7 @@ Got the cookie: `eyJsb2dnZWRfaW4iOnRydWUsInVzZXJuYW1lIjoiYmx1ZSJ9.YwepEw.STvhebu
 
 After loggin in, I found two notes. One of them says: 
 
-![hackthebox noter](/assets/img/Screenshot_2022-08-30_13-28-04.png)
+![hackthebox noter](https://th3redtea.github.io/assets/img/Screenshot_2022-08-30_13-28-04.png)
 
 I got: 
 
@@ -157,7 +157,7 @@ ftp>
 
 Checking the policy.pdf 
 
-![hackthebox Noter](/assets/img//Screenshot_2022-08-30_13-12-22.png)
+![hackthebox Noter](https://th3redtea.github.io/assets/img/Screenshot_2022-08-30_13-12-22.png)
 
 Maybe the admin doesn't like password policies. Let's try to access ftp using the `ftp_admin` username.
 
@@ -293,7 +293,7 @@ The code check if you have the VIP subscription by callling the function `check_
 ```
 2 export it: 
 
-![hackthebox noter](/assets/img/Screenshot_2022-08-31_10-58-07.png)
+![hackthebox noter](https://th3redtea.github.io/assets/img/Screenshot_2022-08-31_10-58-07.png)
 
 3 recieve the revershell with pwncat 
 
@@ -321,7 +321,7 @@ app  user.txt
 
 The root is running MySQL. And that's bad! 
 
-![hackthebox root](/assets/img/mysqllinpease.png)
+![hackthebox root](https://th3redtea.github.io/assets/img/mysqllinpease.png)
 
 MySQL can execute system commands. We will be using user-defined function with this 2006's exploit: 
 
