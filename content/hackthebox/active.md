@@ -1,3 +1,13 @@
+---
+layout: post
+title: Active writeup.
+subtitle: From HackTheBox CTF platform.
+cover-img: /assets/img/active.png
+thumbnail-img: /assets/img/active.png
+share-img: /assets/img/active.jpg
+tags: [hackthebox, ctf, meduim, windows, active directory, kerberoasting, ]
+---
+
 # Active 
 
 ![hackthebox active](/content/assets/img/active.png)
