@@ -10,7 +10,7 @@ tags: [hackthebox, ctf, meduim, windows, active directory, kerberoasting, ]
 
 # Active 
 
-![hackthebox active](/content/assets/img/active.png)
+![hackthebox active](/assets/img/active.png)
 
 ## Nmap
 first  I started with nmap 
