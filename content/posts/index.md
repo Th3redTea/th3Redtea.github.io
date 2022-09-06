@@ -1,3 +1,7 @@
+---
+title: "Writeups and articles"
+---
+
 ## HackTheBox
 
 [Noter](https://th3redtea.github.io/hackthebox/noter/) 

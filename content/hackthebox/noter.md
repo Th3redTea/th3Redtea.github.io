@@ -1,4 +1,12 @@
-# Noter
+---
+layout: post
+title: Noter writeup.
+subtitle: From HackTheBox CTF platform.
+cover-img: /assets/img/noter.png
+thumbnail-img: /assets/img/noter.png
+share-img: /assets/img/Noter.jpg
+tags: [hackthebox, linux, flask, mysql, exploit, session-hijacking, cookie, code-review, ftp]
+---
 
 ## Nmap 
 
