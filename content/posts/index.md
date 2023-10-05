@@ -14,3 +14,7 @@ title: "Writeups and articles"
 [Timelapse](https://th3redtea.github.io/hackthebox/timelapse/)
 
 [Active](https://th3redtea.github.io/hackthebox/active/)
+
+## Some of my notes
+
+[AD THM Notes](https://th3redtea.github.io/posts/ad_notes)
